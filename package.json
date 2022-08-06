@@ -1,0 +1,27 @@
+{
+  "name": "node_hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergKorch/node_hw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergKorch/node_hw/issues"
+  },
+  "homepage": "https://github.com/SergKorch/node_hw#readme",
+  "dependencies": {
+    "commander": "^9.4.0",
+    "nanoid": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
