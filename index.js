@@ -34,5 +34,5 @@ function invokeAction({ action, id, name, email, phone }) {
       console.warn("\x1B[31m Unknown action type!");
   }
 }
-console.log(" Unknown action type!");
+console.log(" Unknown action type! 22");
 // invokeAction(argv);
