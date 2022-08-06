@@ -1,33 +1,40 @@
-// const { Command } = require("commander");
-// const program = new Command();
-// program
-//   .option("-a, --action <type>", "choose action")
-//   .option("-i, --id <type>", "user id")
-//   .option("-n, --name <type>", "user name")
-//   .option("-e, --email <type>", "user email")
-//   .option("-p, --phone <type>", "user phone");
+const { Command } = require("commander");
+const { log } = require("console");
+const program = new Command();
+program
+  .option("-a, --action <type>", "choose action")
+  .option("-i, --id <type>", "user id")
+  .option("-n, --name <type>", "user name")
+  .option("-e, --email <type>", "user email")
+  .option("-p, --phone <type>", "user phone");
 
-// program.parse(process.argv);
+program.parse(process.argv);
 
-// const argv = program.opts();
+const argv = program.opts();
+const contacts = require("./contacts")
+
 
 // TODO: рефакторить
-function invokeAction({ action, id, name, email, phone }) {
+const invokeAction = async ({ action, id, name, email, phone })=> {
   switch (action) {
     case "list":
-      // ...
+      const allContacts=await contacts.listContacts()
+      console.log(allContacts)
       break;
 
     case "get":
-      // ... id
+        const oneContacts=await contacts.listContacts()
+        console.log(oneContacts)
       break;
 
     case "add":
-      // ... name email phone
+      const newContacts=await contacts.addContact({name,email,phone})
+      console.log(newContacts)
       break;
 
     case "remove":
-      // ... id
+      const removeContacts=await contacts.removeContact(id)
+      console.log(removeContacts)
       break;
 
     default:
@@ -35,4 +42,4 @@ function invokeAction({ action, id, name, email, phone }) {
   }
 }
 console.log(" Unknown action type! 22");
-// invokeAction(argv);
+invokeAction(argv);
