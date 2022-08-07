@@ -29,6 +29,8 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     case "add":
       await contacts.addContact(name, email, phone);
       console.log(`Add contact name=${name}, email=${email}, phone=${phone}`);
+      const allContactsAdd = await contacts.listContacts();
+      console.table(allContactsAdd);
       break;
 
     case "remove":
