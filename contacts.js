@@ -28,7 +28,6 @@ const removeContact = async (contactId) => {
 };
 
 const addContact = async (name, email, phone) => {
-  console.log("add");
   const contacts = await listContacts();
   const newContact = JSON.stringify(
     [...contacts, { id: nanoid(), name, email, phone }],
